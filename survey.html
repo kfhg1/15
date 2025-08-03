@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استبيان رضا المستفيد - منصة ذكرني</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: Tahoma, sans-serif; margin: 0; background: #f7fdf9; }
+    header { background: #006c35; color: white; text-align: center; padding: 15px; }
+    header h1 { margin: 0; font-size: 1.6rem; }
+    .container { max-width: 800px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    h2 { color: #004d24; text-align: center; margin-bottom: 25px; }
+    label { display: block; margin: 15px 0 5px; font-weight: bold; }
+    select, textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; }
+    textarea { resize: vertical; min-height: 80px; }
+    button { background-color: #006c35; color: white; padding: 12px 20px; border: none; border-radius: 6px; margin-top: 20px; font-size: 1rem; cursor: pointer; }
+    button:hover { background-color: #004d24; }
+    .success { background: #e0f7e9; border: 1px solid #a6d6c3; padding: 15px; border-radius: 10px; margin-top: 20px; color: #004d24; display: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>استبيان رضا المستفيد</h1>
+  </header>
+
+  <div class="container">
+    <h2>نقدر رأيك لتطوير خدمات منصة ذكرني 🙏</h2>
+    <form onsubmit="handleSurvey(event)">
+      <label>١. ما مدى رضاك عن جودة الخدمة المقدمة؟</label>
+      <select required>
+        <option value="">اختر...</option>
+        <option>غير راضٍ تمامًا</option>
+        <option>غير راضٍ</option>
+        <option>محايد</option>
+        <option>راضٍ</option>
+        <option>راضٍ جدًا</option>
+      </select>
+
+      <label>٢. ما مدى سرعة الحصول على الخدمة؟</label>
+      <select required>
+        <option value="">اختر...</option>
+        <option>بطيئة جدًا</option>
+        <option>بطيئة</option>
+        <option>متوسطة</option>
+        <option>سريعة</option>
+        <option>سريعة جدًا</option>
+      </select>
+
+      <label>٣. ما مدى وضوح الإجراءات المطلوبة منك؟</label>
+      <select required>
+        <option value="">اختر...</option>
+        <option>غير واضحة إطلاقًا</option>
+        <option>غير واضحة</option>
+        <option>محايد</option>
+        <option>واضحة</option>
+        <option>واضحة جدًا</option>
+      </select>
+
+      <label>٤. ما مدى احترافية الموظف أثناء تقديم الخدمة؟</label>
+      <select required>
+        <option value="">اختر...</option>
+        <option>سيئة جدًا</option>
+        <option>سيئة</option>
+        <option>متوسطة</option>
+        <option>جيدة</option>
+        <option>ممتازة</option>
+      </select>
+
+      <label>٥. هل تنصح الآخرين باستخدام هذه الخدمة؟</label>
+      <select required>
+        <option value="">اختر...</option>
+        <option>نعم</option>
+        <option>لا</option>
+        <option>لست متأكدًا</option>
+      </select>
+
+      <label>٦. ما الذي يمكن تحسينه في هذه الخدمة؟</label>
+      <textarea placeholder="اكتب اقتراحك هنا..."></textarea>
+
+      <button type="submit">إرسال التقييم</button>
+
+      <div class="success" id="successMsg">✅ شكرًا لمشاركتك! تم إرسال تقييمك بنجاح.</div>
+    </form>
+  </div>
+
+  <script>
+    function handleSurvey(e) {
+      e.preventDefault();
+      document.getElementById("successMsg").style.display = "block";
+      setTimeout(() => {
+        window.close(); // يغلق النافذة بعد الإرسال
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
